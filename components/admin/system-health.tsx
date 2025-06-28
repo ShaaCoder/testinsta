@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { Server, Database, Cpu, HardDrive, Wifi, CheckCircle, AlertTriangle } from 'lucide-react';
-
+import { cn } from '@/lib/utils';
 export function SystemHealth() {
   const metrics = [
     {
