@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 18, 18, 18;
+  --instagram-gradient: linear-gradient(45deg, #833AB4, #C13584, #E1306C, #F56040, #FCAF45);
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 291 64% 42%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 291 64% 42%;
+    --chart-1: 291 64% 42%;
+    --chart-2: 340 82% 52%;
+    --chart-3: 21 90% 48%;
+    --chart-4: 45 93% 47%;
+    --chart-5: 48 100% 67%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  }
+}
+
+@layer components {
+  .instagram-gradient {
+    background: linear-gradient(45deg, #833AB4, #C13584, #E1306C, #F56040, #FCAF45);
+  }
+  
+  .instagram-gradient-text {
+    background: linear-gradient(45deg, #833AB4, #C13584, #E1306C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glass-card {
+    @apply bg-card/50 backdrop-blur-sm border border-white/10;
+  }
+  
+  .metric-card {
+    @apply glass-card p-6 rounded-xl transition-all duration-300 hover:bg-card/70 hover:border-white/20;
+  }
+  
+  .action-button {
+    @apply px-4 py-2 rounded-lg bg-primary/20 border border-primary/30 text-primary hover:bg-primary/30 transition-all duration-200;
+  }
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
